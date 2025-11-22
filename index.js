@@ -24,6 +24,10 @@ app.use(express.json({ limit: "5mb" }))
 
 app.use("/api/toDocx", require("./routes/docx"))
 
+app.get("/", (req, res) =>{
+    res.status(200).json({message:"Backend working...!"})
+})
+
 app.listen(PORT, () => {
     console.log("Routing on Port: ", PORT)
 });
